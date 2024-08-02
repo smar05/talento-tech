@@ -1,4 +1,18 @@
-const UserCard = ({ user }: any) => {
+import React from "react";
+
+interface User {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+  avatar: string;
+}
+
+interface UserCardProps {
+  user: User;
+}
+
+const UserCard: React.FC<UserCardProps> = ({ user }) => {
   return (
     <div className="card" style={{ width: "18rem", margin: "1rem" }}>
       <img src={user.avatar} className="card-img-top" alt={user.first_name} />
